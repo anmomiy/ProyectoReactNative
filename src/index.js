@@ -1,10 +1,8 @@
 
 import { ActivityIndicator, View } from 'react-native';
-import { useState } from 'react';
 import { useFonts } from 'expo-font'
-import { Header } from './components';
-import { LogIn, Welcome } from './screens';
 import colors from './constants/themes/colors';
+import AppNavigator from './navigation';
 
 const App = () => {
  const [loaded] = useFonts({
@@ -26,7 +24,7 @@ const App = () => {
     'Nunito-SemiBoldItalic': require('../assets/fonts/Nunito-SemiBoldItalic.ttf'),
   });
 
-  const [userName, setUserName] = useState('');
+ /* const [userName, setUserName] = useState('');
 
   const onHandleLog = (selectedName) => {
     setUserName(selectedName);
@@ -41,7 +39,7 @@ const App = () => {
     return <LogIn onHandleLog={onHandleLog} />
 
   };
-
+*/
 
 if (!loaded){
   return(
@@ -52,10 +50,7 @@ if (!loaded){
 }
 
 return(
-  <View>
-    <Header title='Mi App'/>
-    <Content />
-  </View>
+  <AppNavigator/>
 )
 }
 

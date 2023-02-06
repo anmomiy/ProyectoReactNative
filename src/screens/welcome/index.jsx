@@ -1,14 +1,15 @@
-import React, {useState} from 'react'
-import { View, Text } from 'react-native';
+import React from 'react'
+import { View, Text, Button } from 'react-native';
 import {styles} from './styles'
+import { colors } from '../../constants';
 
-const Welcome = ({name}) => {
-
+const Welcome = ({route, navigation}) => {
+    const {userName} = route.params
     return(
         <View style={styles.container}>
 
-            <Text style={styles.welcome}>Bienvenido, {name}</Text>
-
+            <Text style={styles.welcome}>Bienvenido, {JSON.stringify(userName)}</Text>
+            <Button title="Volver" onPress={()=>navigation.navigate('Iniciar Sesión')} color={colors.secondary} />
         </View>
     )
 
