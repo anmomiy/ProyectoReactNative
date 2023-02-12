@@ -24,22 +24,6 @@ const App = () => {
     'Nunito-SemiBoldItalic': require('../assets/fonts/Nunito-SemiBoldItalic.ttf'),
   });
 
- /* const [userName, setUserName] = useState('');
-
-  const onHandleLog = (selectedName) => {
-    setUserName(selectedName);
-  };
-
-
-
-  const Content = () => {
-    if (userName !== ''){
-      return <Welcome name={userName}/>
-    }
-    return <LogIn onHandleLog={onHandleLog} />
-
-  };
-*/
 
 if (!loaded){
   return(
