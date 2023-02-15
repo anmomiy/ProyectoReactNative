@@ -3,7 +3,8 @@ import { ActivityIndicator, View } from 'react-native';
 import { useFonts } from 'expo-font'
 import colors from './constants/themes/colors';
 import AppNavigator from './navigation';
-
+import { Provider } from 'react-redux';
+import store from './store';
 const App = () => {
  const [loaded] = useFonts({
     'Nunito-Black': require('../assets/fonts/Nunito-Black.ttf'),
@@ -34,7 +35,8 @@ if (!loaded){
 }
 
 return(
-  <AppNavigator/>
+  <Provider store={store}><AppNavigator/></Provider>
+  
 )
 }
 

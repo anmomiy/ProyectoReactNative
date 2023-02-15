@@ -1,14 +1,11 @@
 import { View, Text, Image } from 'react-native';
 
 import { styles } from './styles';
-import { PRODUCTS } from '../../constants';
+import { useSelector } from 'react-redux';
 import { Card } from '../../components';
 
 const ProductDetail = ({ navigation, route }) => {
-  const { productId, title } = route.params;
-
-  const product = PRODUCTS.find((product) => product.id === productId);
-
+  const product = useSelector((state) => state.products.selected);
 
   return (
     <Card style={styles.container}>
